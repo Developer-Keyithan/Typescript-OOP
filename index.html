@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="test" style="font-size: 50px; font-family: sans-serif;"><!-- You have not clicked this button even once! --></p>
+    <button type="button" id="btn" onclick="btnClick()"
+        style="background: darkblue; padding: 20px 100px; font-size: 100px; border-radius: 80px; border: none; color: white;">Click
+        Me!</button>
+
+    <script>
+        let count = 0;
+
+        function btnClick() {
+            const para = document.getElementById('test');
+            const button = document.getElementById('btn');
+
+
+            count++
+            if (count === 1) {
+                para.textContent = `You have clicked this button once!`;
+            }
+            else {
+                para.textContent = `You have clicked this button ${count} times!`;
+            }
+
+            if (count % 2 == 0) {
+                button.style.background = "darkblue"
+            }
+            else {
+                button.style.background = "rgb(197, 0, 0)"
+            }
+        }
+    </script>
+</body>
+
+</html>
